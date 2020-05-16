@@ -20,9 +20,16 @@ public class App {
 	public String secureRandom() {
 		SecureRandom secureRandom = new SecureRandom();
 		Provider provider = secureRandom.getProvider();
-		String value = "getProvider().getName(): " + provider.getName() + "<br> getAlgorithm():"
-				+ secureRandom.getAlgorithm();
-		return value;
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append("getProvider().getName(): ").append( provider.getName()).append("<br />");
+		sb.append("getAlgorithm():").append(secureRandom.getAlgorithm()).append("<br />");
+		return sb.toString();
+	}
+	
+	@GetMapping("/test")
+	public String test() {
+		return "test";
 	}
 }
 
