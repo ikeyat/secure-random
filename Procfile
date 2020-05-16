@@ -1,1 +1,1 @@
-web: java -jar target/secure-random-0.0.1-SNAPSHOT.jar
+web: java -Dserver.port=$PORT -jar target/secure-random-0.0.1-SNAPSHOT.jar
