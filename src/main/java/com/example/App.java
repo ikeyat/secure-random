@@ -23,7 +23,13 @@ public class App {
 		
 		StringBuilder sb = new StringBuilder();
 		sb.append("getProvider().getName(): ").append( provider.getName()).append("<br />");
-		sb.append("getAlgorithm():").append(secureRandom.getAlgorithm()).append("<br />");
+		sb.append("getAlgorithm(): ").append(secureRandom.getAlgorithm()).append("<br />");
+		sb.append("System Properties: <ul>");
+		for (Object key : System.getProperties().keySet()) {
+			Object value = System.getProperty((String) key);
+			sb.append("<li>").append(key).append("=").append(value).append("</li>");
+		} 
+		sb.append("</ul>");
 		return sb.toString();
 	}
 	
